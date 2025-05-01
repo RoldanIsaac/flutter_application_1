@@ -1,0 +1,176 @@
+¡Claro! Aquí tienes la sintaxis básica de Dart (y Flutter) sin mucho detalle:
+
+### 1. **Tipos de Datos Básicos**
+```dart
+int edad = 25;
+double precio = 19.99;
+String nombre = "Juan";
+bool esActivo = true;
+var lista = [1, 2, 3];  // Lista dinámica
+```
+
+### 2. **Condicionales**
+```dart
+if (edad > 18) {
+  print("Mayor de edad");
+} else {
+  print("Menor de edad");
+}
+
+// Condicionales en una sola línea
+edad > 18 ? print("Mayor de edad") : print("Menor de edad");
+```
+
+### 3. **Operadores**
+```dart
+int suma = 5 + 3;
+int resta = 5 - 3;
+int multiplicacion = 5 * 3;
+int division = 5 ~/ 3;  // División entera
+double mod = 5 % 3;  // Módulo
+```
+
+### 4. **Listas y Mapas**
+```dart
+// Lista
+List<int> numeros = [1, 2, 3, 4];
+numeros.add(5);  // Agregar elemento
+
+// Mapa (Diccionario)
+Map<String, int> persona = {
+  'edad': 25,
+  'altura': 175
+};
+```
+
+### 5. **Funciones**
+```dart
+int suma(int a, int b) {
+  return a + b;
+}
+
+// Función anónima
+var sumaAnonima = (int a, int b) => a + b;
+```
+
+### 6. **Clases y Objetos**
+```dart
+class Persona {
+  String nombre;
+  int edad;
+
+  // Constructor
+  Persona(this.nombre, this.edad);
+
+  // Método
+  void saludar() {
+    print("Hola, soy $nombre");
+  }
+}
+
+var juan = Persona("Juan", 25);
+juan.saludar();
+```
+
+### 7. **Ciclos**
+```dart
+// For
+for (int i = 0; i < 5; i++) {
+  print(i);
+}
+
+// While
+int i = 0;
+while (i < 5) {
+  print(i);
+  i++;
+}
+
+// For-in (para recorrer colecciones)
+for (var num in numeros) {
+  print(num);
+}
+```
+
+### 8. **Null Safety (a partir de Dart 2.12)**
+```dart
+int? edad;  // Puede ser null
+String nombre = "Juan";  // No puede ser null
+
+// Operador de coalescencia nula
+String? nombre2;
+String saludo = nombre2 ?? "Invitado";  // Si nombre2 es null, usa "Invitado"
+```
+
+### 9. **Try-Catch**
+```dart
+try {
+  int resultado = 10 ~/ 0;  // Excepción
+} catch (e) {
+  print("Error: $e");
+} finally {
+  print("Esto siempre se ejecuta");
+}
+```
+
+### 10. **Asincronía (Futuro y async/await)**
+```dart
+Future<String> obtenerDatos() async {
+  await Future.delayed(Duration(seconds: 2));
+  return "Datos obtenidos";
+}
+
+void main() async {
+  var datos = await obtenerDatos();
+  print(datos);
+}
+```
+
+### 11. **Widgets Básicos (Flutter)**
+```dart
+// Stateful Widget
+class MyHomePage extends StatefulWidget {
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  int _counter = 0;
+
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Contador"),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text('Contador: $_counter'),
+            ElevatedButton(
+              onPressed: _incrementCounter,
+              child: Text('Incrementar'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+```
+
+### 12. **Declaración de Variables**
+```dart
+var x = 10;  // Tipo inferido
+final y = 20;  // Solo lectura después de la asignación
+const z = 30;  // Valor constante en tiempo de compilación
+```
+
+Eso cubre lo más esencial de Dart y Flutter para empezar. ¿Te gustaría que profundice en algún tema en particular?

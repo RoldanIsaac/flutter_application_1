@@ -44,9 +44,18 @@ class _UserPageState extends State<UserPage> {
   //   _loadUsers();
   // }
 
+  String _message = '';
+
+  void sayHelloWorld() {
+    setState(() {
+      _message = 'Hello World';
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: Text('CRUD de Usuarios')),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -54,10 +63,15 @@ class _UserPageState extends State<UserPage> {
             const Text(
               'You will be the best person you will ever find',
             ),
+            Text('$_message')
           ],
         ),
       ),
-      //     appBar: AppBar(title: Text('CRUD de Usuarios')),
+      floatingActionButton: FloatingActionButton(
+          onPressed: sayHelloWorld,
+          tooltip: 'increment',
+          child: const Icon(Icons.add)),
+
       //     body: Padding(
       //       padding: const EdgeInsets.all(16.0),
       //       child: Column(
